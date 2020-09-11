@@ -1,7 +1,4 @@
-
 const Clarifai = require('clarifai');
-
-
 
 
 const app = new Clarifai.App({
@@ -16,7 +13,6 @@ const handleApiCall = (req, res) => {
   .catch(err => res.status(400).json('Unable to work with API'))
 }
    
-
 const handleImage =(req, res, db) => {
     const { id } = req.body;
     db('users').where('id', '=', id)
@@ -27,6 +23,7 @@ const handleImage =(req, res, db) => {
     })
     .catch(err => res.status(400).json('Error getting entries'))
 };
+
 
 module.exports = {
     handleImage,
